@@ -1,0 +1,18 @@
+\begin{verbatim}
+y = var('y')
+
+f=x^2*y    # in the form f(xy)dx + g(xy) dy
+g=-y^2*x
+pf= diff(f, y)
+pg= diff(g, x)
+
+a=0                 # a,b are x bounds
+b=4
+c=0                   # c,d are y bounds
+d=(16-x^2)^(1/2)
+
+innerint=integrate(pg-pf, y , c,d) #type 1 region
+outerint=integrate(innerint, x, a,b)
+outerint
+-32*pi
+\end{verbatim}
